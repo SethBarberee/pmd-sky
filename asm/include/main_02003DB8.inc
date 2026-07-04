@@ -61,7 +61,7 @@
 .public FS_SeekFile
 .public FS_UnloadOverlay
 .public GetDsFirmwareUserSettings
-.public GetOverlayInfo
+.public FS_LoadOverlayInfo
 .public GX_BeginLoadBGExtPltt
 .public GX_BeginLoadOBJExtPltt
 .public GX_EndLoadBGExtPltt
@@ -69,9 +69,9 @@
 .public GXS_BeginLoadBGExtPltt
 .public GXS_EndLoadBGExtPltt
 .public IC_InvalidateAll
-.public InitOverlay
+.public FS_StartOverlay
 .public LOADED_OVERLAY_GROUP_0
-.public LoadOverlayInternal
+.public FS_LoadOverlayImage
 .public Math_CalcCrc32
 .public Mathi_Crc32InitTable
 .public MemAlloc

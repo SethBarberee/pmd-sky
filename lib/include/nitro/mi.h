@@ -6,5 +6,6 @@
 #include <nitro/mi/memory.h>
 #include <nitro/mi/wram.h>
 #include <nitro/mi/uncompress.h>
+#include <nitro/mi/mi_dma.h>
 
 #endif //NITRO_MI_H_

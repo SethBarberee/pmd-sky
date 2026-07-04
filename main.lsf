@@ -249,6 +249,8 @@ Static main
     Object lib/NitroSDK/asm/gx_load2d.o
     Object lib/NitroSDK/asm/gx_load3d.o
     Object lib/NitroSDK/src/gxasm.o
+    Object lib/NitroSDK/asm/os_irqHandler.o
+    Object lib/NitroSDK/asm/os_irqTable.o
     Object lib/NitroSDK/asm/os_interrupt.o
     Object lib/NitroSDK/asm/os_spinlock.o
     Object lib/NitroSDK/asm/os_thread.o
@@ -275,16 +277,16 @@ Static main
 	Object lib/NitroSDK/src/os/os_entropy.o
 	Object lib/NitroSDK/src/os/os_terminate_proc.o
 	Object lib/NitroSDK/src/mi/mi_wram.o
-	Object lib/NitroSDK/asm/mi_dma.o
+	Object lib/NitroSDK/src/mi/mi_dma.o
 	Object lib/NitroSDK/src/mi/mi_memory.o
 	Object lib/NitroSDK/asm/mi_memory_1.o
     Object lib/NitroSDK/src/mi/mi_uncompress.o
-    Object lib/NitroSDK/asm/mi_dma_card.o
+    Object lib/NitroSDK/src/mi/mi_dma_card.o
     Object lib/NitroSDK/src/mi/mi_init.o
     Object lib/NitroSDK/asm/snd_interface.o
     Object lib/NitroSDK/src/snd/snd_main.o
     Object lib/NitroSDK/asm/snd_command.o
-    Object lib/NitroSDK/asm/snd_alarm.o
+    Object lib/NitroSDK/src/snd/snd_alarm.o
     Object lib/NitroSDK/asm/snd_work.o
     Object lib/NitroSDK/src/snd/snd_util.o
     Object lib/NitroSDK/src/snd/snd_bank.o
@@ -338,6 +340,8 @@ Autoload ITCM
 {
 	Address 0x01FF8000
 	Object asm/itcm.o (.itcm)
+	Object lib/NitroSDK/src/mi/mi_dma.o (.itcm)
+	Object asm/itcm_1.o (.itcm)
 	Object src/dungeon_ai_movement.o (.itcm)
 	Object asm/itcm_01FFB62C.o (.itcm)
 	Object src/dungeon_ai_itcm.o (.itcm)

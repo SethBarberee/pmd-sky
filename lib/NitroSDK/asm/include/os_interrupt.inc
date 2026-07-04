@@ -88,6 +88,7 @@
 .public MTi_CpuCopy32
 .public MTX_LookAt
 .public MTX_OrthoW
+.public OS_DisableIrqMask
 .public OS_InitReset
 .public OS_IRQTable
 .public OS_SleepThread

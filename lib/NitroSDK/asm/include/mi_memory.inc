@@ -7,15 +7,15 @@
 .public _022B9D00
 .public _022BAA20
 .public _022BB4E8
-.public _022BB500
-.public _022BB564
+.public sCalllackTable
+.public FifoCtrlInit
 .public _022BB568
 .public DC_FlushRange
 .public DC_InvalidateRange
 .public DC_StoreRange
 .public EnableIrqFlag
 .public FS_InitFile
-.public InitDmaTransfer_Standard
+.public MIi_DmaSetParams
 .public MI_CpuCopy8
 .public MI_SetWramBank
 .public MI_StopDma
@@ -38,6 +38,6 @@
 .public SNDi_SharedWork
 .public sReserveList
 .public sSndMutex
-.public sub_01FF9B3C
+.public MIi_DmaSetParams_wait_noInt
 .public VolumeTable
 .public WaitForever2
