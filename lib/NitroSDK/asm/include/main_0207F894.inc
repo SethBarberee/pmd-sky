@@ -75,9 +75,9 @@
 .public DC_InvalidateRange
 .public DC_StoreRange
 .public DC_WaitWriteBufferEmpty
-.public Dgt_Hash2GetHash
-.public Dgt_Hash2Init
-.public Dgt_Hash2Update
+.public DGT_Hash2GetDigest
+.public DGT_Hash2Reset
+.public DGT_Hash2SetSource
 .public EnableIrqFlag
 .public fflush
 .public FS_CloseFile

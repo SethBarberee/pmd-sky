@@ -72,8 +72,8 @@
 .public FS_StartOverlay
 .public LOADED_OVERLAY_GROUP_0
 .public FS_LoadOverlayImage
-.public Math_CalcCrc32
-.public Mathi_Crc32InitTable
+.public MATH_CalcCRC32
+.public MATHi_CRC32InitTable
 .public MemAlloc
 .public MemFree
 .public MemLocateSet

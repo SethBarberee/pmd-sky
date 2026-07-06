@@ -308,7 +308,7 @@ Static main
 	Object lib/NitroSDK/asm/spi_tp.o
 	Object lib/NitroSDK/asm/spi_pm.o
 	Object lib/NitroSDK/asm/rtc_external.o
-	Object lib/NitroSDK/src/rtc_internal.o
+	Object lib/NitroSDK/src/rtc/rtc_internal.o
 	Object lib/NitroSDK/asm/rtc_convert.o
 	Object lib/NitroSDK/asm/card_common.o
 	Object lib/NitroSDK/asm/card_spi.o
@@ -319,8 +319,8 @@ Static main
 	Object lib/NitroSDK/asm/ctrdg.o
 	Object lib/NitroSDK/asm/ctrdg_proc.o
 	Object lib/NitroSDK/asm/ctrdg_task.o
-	Object lib/NitroSDK/src/math_math.o
-	Object lib/NitroSDK/asm/math_dgt.o
+	Object lib/NitroSDK/src/math/math.o
+	Object lib/NitroSDK/src/math/math_dgt.o
 	Object lib/NitroSDK/asm/math_crc.o
 	Object lib/NitroSDK/asm/std_string.o
 	Object lib/NitroSDK/src/os/os_printf_1.o
