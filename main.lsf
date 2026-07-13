@@ -239,12 +239,12 @@ Static main
     Object lib/NitroSDK/src/fx/fx_atanidx.o
     Object lib/NitroSDK/src/fx/fx.o
     Object lib/NitroSDK/asm/gx.o
-    Object lib/NitroSDK/asm/gxstate.o
+    Object lib/NitroSDK/src/gx/gxstate.o
     Object lib/NitroSDK/asm/gx_vramcnt.o
     Object lib/NitroSDK/asm/gx_bgcnt.o
     Object lib/NitroSDK/src/gx/g2.o
     Object lib/NitroSDK/src/gx/g3imm.o
-    Object lib/NitroSDK/asm/g3x.o
+    Object lib/NitroSDK/src/gx/g3x.o
     Object lib/NitroSDK/src/gx/g3_util.o
     Object lib/NitroSDK/asm/gx_load2d.o
     Object lib/NitroSDK/asm/gx_load3d.o
