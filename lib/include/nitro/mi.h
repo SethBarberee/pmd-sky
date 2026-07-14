@@ -8,5 +8,6 @@
 #include <nitro/mi/uncompress.h>
 #include <nitro/mi/mi_dma.h>
 #include <nitro/mi/swap.h>
+#include <nitro/mi/byteAccess.h>
 
 #endif //NITRO_MI_H_
