@@ -341,10 +341,10 @@ Autoload ITCM
 {
 	Address 0x01FF8000
 	Object asm/itcm.o (.itcm)
+	Object asm/os_reset_itcm.o (.itcm)
 	Object lib/NitroSDK/src/mi/mi_dma.o (.itcm)
 	Object asm/itcm_1.o (.itcm)
 	Object src/dungeon_ai_movement.o (.itcm)
-	Object asm/itcm_01FFB62C.o (.itcm)
 	Object src/dungeon_ai_itcm.o (.itcm)
 	Object asm/itcm_01FFBD20.o (.itcm)
 }
