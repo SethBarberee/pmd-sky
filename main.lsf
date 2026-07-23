@@ -346,7 +346,6 @@ Autoload ITCM
 	Object asm/itcm_1.o (.itcm)
 	Object src/dungeon_ai_movement.o (.itcm)
 	Object src/dungeon_ai_itcm.o (.itcm)
-	Object asm/itcm_01FFBD20.o (.itcm)
 }
 
 Autoload DTCM
