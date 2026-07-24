@@ -1,4 +1,5 @@
 #include "main_02071BF4.h"
+#include "dc_envelope.h"
 
 extern struct dse_driver_work DRIVER_WORK;
 
@@ -55,4 +56,55 @@ u8* DseTrackEvent_SongVolumeFade(u8 *ptr_next_byte, struct dse_sequence *sequenc
     }
     (sequence->volume).ticks_remaining = (short)uVar4;
     return ptr_next_byte + 3;
+}
+
+u8* DseTrackEvent_RestoreEnvelopeDefaults(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
+{
+    SoundEnvelopeParameters_Reset(&channel->envelope_override);
+    return ptr_next_byte;
+}
+
+u8* DseTrackEvent_SetEnvelopeAttackBegin(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
+{
+    channel->envelope_override.attack_begin = *ptr_next_byte;
+    SoundEnvelopeParameters_CheckValidity(&channel->envelope_override);
+    return ptr_next_byte + 1;
+}
+
+u8* DseTrackEvent_SetEnvelopeAttackTime(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
+{
+    channel->envelope_override.attack_time = *ptr_next_byte;
+    SoundEnvelopeParameters_CheckValidity(&channel->envelope_override);
+    return ptr_next_byte + 1;
+}
+
+u8* DseTrackEvent_SetEnvelopeHoldTime(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
+{
+    channel->envelope_override.hold_time = *ptr_next_byte;
+    SoundEnvelopeParameters_CheckValidity(&channel->envelope_override);
+    return ptr_next_byte + 1;
+}
+
+u8* DseTrackEvent_SetEnvelopeDecayTimeAndSustainLevel(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
+{
+
+    if(ptr_next_byte[0] != 0xFF) channel->envelope_override.decay_time = ptr_next_byte[0];
+    if(ptr_next_byte[1] != 0xFF) channel->envelope_override.sustain_level = ptr_next_byte[1];
+
+    SoundEnvelopeParameters_CheckValidity(&channel->envelope_override);
+    return ptr_next_byte + 2;
+}
+
+u8* DseTrackEvent_SetEnvelopeSustainTime(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
+{
+    channel->envelope_override.sustain_time = *ptr_next_byte;
+    SoundEnvelopeParameters_CheckValidity(&channel->envelope_override);
+    return ptr_next_byte + 1;
+}
+
+u8* DseTrackEvent_SetEnvelopeReleaseTime(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
+{
+    channel->envelope_override.release_time = *ptr_next_byte;
+    SoundEnvelopeParameters_CheckValidity(&channel->envelope_override);
+    return ptr_next_byte + 1;
 }

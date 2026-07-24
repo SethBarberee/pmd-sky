@@ -2,6 +2,11 @@
 
 #define IME (*(vu16*)0x4000208)
 
+u8* DseTrackEvent_Dummy2Bytes(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
+{
+    return ptr_next_byte + 2;
+}
+
 u8* DseTrackEvent_SetTuning(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel)
 {
     s16 tune = *(s8*)ptr_next_byte<<8;

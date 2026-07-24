@@ -6,5 +6,13 @@
 u8* DseTrackEvent_Dummy1Byte(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
 u8* DseTrackEvent_SetInstrument(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
 u8* DseTrackEvent_SongVolumeFade(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
+u8* DseTrackEvent_RestoreEnvelopeDefaults(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
+u8* DseTrackEvent_SetEnvelopeAttackBegin(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
+u8* DseTrackEvent_SetEnvelopeAttackTime(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
+u8* DseTrackEvent_SetEnvelopeHoldTime(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
+u8* DseTrackEvent_SetEnvelopeDecayTimeAndSustainLevel(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
+u8* DseTrackEvent_SetEnvelopeSustainTime(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
+u8* DseTrackEvent_SetEnvelopeReleaseTime(u8 *ptr_next_byte, struct dse_sequence *sequence, struct dse_track *track, struct dse_channel *channel);
+
 
 #endif //PMDSKY_MAIN_02071BF4_H
