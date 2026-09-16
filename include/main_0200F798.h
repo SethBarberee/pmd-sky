@@ -7,5 +7,8 @@ struct item *GetFirstUnequippedItemOfType(s16 type);
 u32 RemoveItemNoHoleCheck(struct item *item);
 
 u32 RemoveFirstUnequippedItemOfType(s16 type);
+void RemoveAllItems(void);
+void RemoveAllItemsStartingAt(s32 _index);
+void SpecialProcAddItemToBag(struct bulk_item *bulkItem);
 
 #endif
