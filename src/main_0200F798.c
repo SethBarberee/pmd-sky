@@ -1,12 +1,12 @@
 #include "main_0200F798.h"
 #include "item_util_4.h"
 #include "main_0200D81C.h"
-#include "main_0200F874.h"
 
 extern struct bag_items* BAG_ITEMS_PTR_MIRROR;
 
 void RemoveEmptyItems(struct item *, s32);
 void sub_020582E0();
+u32 AddItemToBag(struct item *item, u32 flag);
 
 u32 RemoveFirstUnequippedItemOfType(s16 type)
 {
