@@ -47,3 +47,9 @@ void SpecialProcAddItemToBag(struct bulk_item *bulkItem)
     BulkItemToItem(&item, bulkItem);
     AddItemToBag(&item, 0);
 }
+
+u32 AddItemToBagNoHeld(struct item *item)
+{
+    return AddItemToBag(item, 0);
+}
+

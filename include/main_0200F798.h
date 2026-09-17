@@ -10,5 +10,6 @@ u32 RemoveFirstUnequippedItemOfType(s16 type);
 void RemoveAllItems(void);
 void RemoveAllItemsStartingAt(s32 _index);
 void SpecialProcAddItemToBag(struct bulk_item *bulkItem);
+u32 AddItemToBagNoHeld(struct item *item);
 
 #endif
