@@ -10,6 +10,10 @@ u32 RemoveFirstUnequippedItemOfType(s16 type);
 void RemoveAllItems(void);
 void RemoveAllItemsStartingAt(s32 _index);
 void SpecialProcAddItemToBag(struct bulk_item *bulkItem);
-u32 AddItemToBagNoHeld(struct item *item);
+bool8 AddItemToBagNoHeld(struct item *item);
+bool8 AddItemToBag(struct item* item, bool8 held_by);
+void CleanStickyItemsInBag(void);
+s16 CountStickyItemsInBag(void);
+void sub_0200F9B4(u8 *arg0);
 
 #endif
