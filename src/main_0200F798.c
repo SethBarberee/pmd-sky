@@ -188,7 +188,7 @@ void sub_0200F9B4(u8 *arg0)
     }
 }
 
-void sub_0200FA0C(u8 *arg0, s32 arg1)
+void sub_0200FA0C(u8 *arg0, u32 arg1)
 {
     bool32 itemExists;
     bool8 heldBy;
@@ -198,7 +198,8 @@ void sub_0200FA0C(u8 *arg0, s32 arg1)
     
     for(s32 index = 0; index < INVENTORY_SIZE; index++, item++)
     {
-        if (item->flags & 1) {
+        if (item->flags & ITEM_FLAG_EXISTS)
+        {
             itemExists = TRUE;
         } else {
             itemExists = FALSE;
@@ -210,4 +211,72 @@ void sub_0200FA0C(u8 *arg0, s32 arg1)
             }
         }
     }
+}
+
+bool8 TransmuteHeldItemInBag(struct item* held_item)
+{
+    bool32 itemExists;
+    struct item_u16 *held_item_1 = (struct item_u16*) held_item;
+    struct item_u16 *item = (struct item_u16 *) BAG_ITEMS_PTR_MIRROR->bag_items->bag_items;
+    
+    for(s32 index = 0; index < INVENTORY_SIZE; index++, item++)
+    {
+        if (item->flag_held.fhb.flags & ITEM_FLAG_EXISTS)
+        {
+            itemExists = TRUE;
+        } else {
+            itemExists = FALSE;
+        }
+        if ((itemExists & 0xFF) && (item->flag_held.fhb.held_by == held_item_1->flag_held.fhb.held_by)) {
+            item->flag_held.flags_held_by_u16 = held_item_1->flag_held.flags_held_by_u16;
+            item->quantity = held_item_1->quantity;
+            item->id = held_item_1->id;
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+void SetFlagsForHeldItemInBag(bool8 isHeldItem, u8 _flags) {
+    bool32 itemExists;
+    struct item* item;
+
+    if (!isHeldItem) return;
+
+    item = BAG_ITEMS_PTR_MIRROR->bag_items->bag_items;
+    
+    for(s32 index = 0; index < INVENTORY_SIZE; index++, item++)
+    {
+        if (item->flags & ITEM_FLAG_EXISTS) 
+        {
+            itemExists = TRUE;
+        } else {
+            itemExists = FALSE;
+        }
+        if ((itemExists & 0xFF) && (item->held_by == isHeldItem)) {
+            item->flags |= _flags;
+        }
+    }
+}
+
+bool8 RemoveHolderForItemInBag(struct item *item)
+{
+    bool32 itemExists;
+    struct item* bag_item;
+
+    bag_item = BAG_ITEMS_PTR_MIRROR->bag_items->bag_items;
+    for(s32 index = 0; index < INVENTORY_SIZE; index++, bag_item++)
+    {
+        if (bag_item->flags & ITEM_FLAG_EXISTS) {
+            itemExists = TRUE;
+        } else {
+            itemExists = FALSE;
+        }
+        if ((itemExists & 0xFF) && (AreItemsEquivalent(bag_item, item, 1))) {
+            bag_item->held_by = FALSE;
+            bag_item->flags = item->flags;
+            return TRUE;
+        }
+    }
+    return FALSE;
 }
