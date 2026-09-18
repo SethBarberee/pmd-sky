@@ -3,35 +3,6 @@
 
 	.text
 
-	arm_func_start sub_0200FA0C
-sub_0200FA0C: ; 0x0200FA0C
-	stmdb sp!, {r3, lr}
-	ldr r3, _0200FA64 ; =BAG_ITEMS_PTR_MIRROR
-	mov r2, #0x12c
-	ldr r3, [r3]
-	mov lr, #0
-	mla ip, r1, r2, r3
-	mov r2, lr
-	mov r3, #1
-_0200FA2C:
-	ldrb r1, [ip]
-	add lr, lr, #1
-	tst r1, #1
-	movne r1, r3
-	moveq r1, r2
-	tst r1, #0xff
-	ldrneb r1, [ip, #1]
-	cmpne r1, #0
-	ldrneb r1, [r0, r1]
-	strneb r1, [ip, #1]
-	cmp lr, #0x32
-	add ip, ip, #6
-	blt _0200FA2C
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0200FA64: .word BAG_ITEMS_PTR_MIRROR
-	arm_func_end sub_0200FA0C
-
 	arm_func_start TransmuteHeldItemInBag
 TransmuteHeldItemInBag: ; 0x0200FA68
 	stmdb sp!, {r4, lr}

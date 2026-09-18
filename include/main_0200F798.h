@@ -15,5 +15,6 @@ bool8 AddItemToBag(struct item* item, bool8 held_by);
 void CleanStickyItemsInBag(void);
 s16 CountStickyItemsInBag(void);
 void sub_0200F9B4(u8 *arg0);
+void sub_0200FA0C(u8 *arg0, s32 arg1);
 
 #endif

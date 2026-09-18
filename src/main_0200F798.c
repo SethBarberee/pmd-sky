@@ -187,3 +187,27 @@ void sub_0200F9B4(u8 *arg0)
         }
     }
 }
+
+void sub_0200FA0C(u8 *arg0, s32 arg1)
+{
+    bool32 itemExists;
+    bool8 heldBy;
+    struct item* item;
+
+    item = BAG_ITEMS_PTR_MIRROR->inventories[arg1].bag_items;
+    
+    for(s32 index = 0; index < INVENTORY_SIZE; index++, item++)
+    {
+        if (item->flags & 1) {
+            itemExists = TRUE;
+        } else {
+            itemExists = FALSE;
+        }
+        if (itemExists & 0xFF) {
+            heldBy = item->held_by;
+            if (heldBy) {
+                item->held_by = arg0[heldBy];
+            }
+        }
+    }
+}
