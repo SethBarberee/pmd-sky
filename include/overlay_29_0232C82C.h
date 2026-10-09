@@ -5,6 +5,8 @@
 #include "item.h"
 #include "move.h"
 
+bool8 DoMoveSiesta(struct entity *attacker, struct entity *defender, struct  move* move, enum item_id item_id);
+bool8 DoMoveTwoEdge(struct entity* attacker, struct entity* defender, struct  move* move, enum item_id item_id);
 bool8 DoMoveNoMove(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
 bool8 DoMoveScan(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
 bool8 DoMovePowerEars(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);

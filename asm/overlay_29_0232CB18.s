@@ -3,6 +3,7 @@
 
 	.text
 
+; https://decomp.me/scratch/mXcvf 
 	arm_func_start DoMoveTrapBuster
 DoMoveTrapBuster: ; 0x0232CB18
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
@@ -136,6 +137,7 @@ _0232CCBC: .word 0x00000F05 + DO_MOVE_TRAP_BUSTER_OFFSET
 _0232CCC0: .word 0x00000F06 + DO_MOVE_TRAP_BUSTER_OFFSET
 	arm_func_end DoMoveTrapBuster
 
+; https://decomp.me/scratch/UtSbq 
 	arm_func_start DoMoveWildCall
 DoMoveWildCall: ; 0x0232CCC4
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}

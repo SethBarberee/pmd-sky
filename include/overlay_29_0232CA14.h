@@ -10,5 +10,7 @@ bool8 DoMoveSearchlight(struct entity* attacker, struct entity* defender, struct
 bool8 DoMovePetrify(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
 bool8 DoMovePounce(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
 bool8 DoMoveTrawl(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
+bool8 DoMoveEscape(struct entity *attacker, struct entity *defender, struct move* move, enum item_id item_id);
+bool8 DoMoveDrought(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
 
 #endif
