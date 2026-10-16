@@ -904,7 +904,7 @@ void UpdateShopkeeperModeAfterTrap(struct entity *entity, bool8 is_enemy)
     }
 }
 
-bool8 ov29_0230D4A4(struct entity *attacker, struct entity *defender, enum type_id attack_type)
+bool8 ov29_0230D4A4(struct entity *attacker, struct entity *defender, enum type_id attack_type, bool8 unused)
 {
     struct monster *info = GetEntInfo(defender);
     s32 i;

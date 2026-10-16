@@ -7,5 +7,8 @@
 
 bool8 DoMoveBoostDefense2(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
 bool8 DoMoveWarp(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
+bool8 DoMoveThundershock(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
+bool8 DoMoveThunderWave(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
+bool8 DoMoveZapCannon(struct entity* attacker, struct entity* defender, struct move* move, enum item_id item_id);
 
 #endif

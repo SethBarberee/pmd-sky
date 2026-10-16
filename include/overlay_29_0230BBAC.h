@@ -18,7 +18,7 @@ void CalcDamageFixedNoCategory(struct entity *attacker, struct entity *defender,
 void CalcDamageFixedWrapper(struct entity *attacker, struct entity *defender, s32 fixed_damage, s32 a4, bool8 *out_flag, enum type_id attack_type, u8 category, s16 damage_source, s32 a9, s32 a10, s32 a11);
 void UpdateShopkeeperModeAfterAttack(struct entity *attacker, struct entity *defender);
 void UpdateShopkeeperModeAfterTrap(struct entity *entity, bool8 is_enemy);
-bool8 ov29_0230D4A4(struct entity *attacker, struct entity *defender, enum type_id attack_type);
+bool8 ov29_0230D4A4(struct entity *attacker, struct entity *defender, enum type_id attack_type, bool8 unused);
 void ResetDamageCalcDiagnostics(void);
 s32 ov29_0230D618(s32 idx);
 void ov29_0230D628(struct entity *entity);
